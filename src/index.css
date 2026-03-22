@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #0c0c14;
+  --color-foreground: #f0f0f3;
+  --color-card: #161623;
+  --color-card-foreground: #f0f0f3;
+  --color-popover: #161623;
+  --color-popover-foreground: #f0f0f3;
+  --color-primary: #8b7ff8;
+  --color-primary-foreground: #fafafa;
+  --color-secondary: #252540;
+  --color-secondary-foreground: #f0f0f3;
+  --color-muted: #1c1c30;
+  --color-muted-foreground: #9898b0;
+  --color-accent: #8b7ff8;
+  --color-accent-foreground: #fafafa;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+  --color-border: #32325a;
+  --color-input: #32325a;
+  --color-ring: #6d5ff5;
+  --radius: 0.75rem;
+
+  --color-score-high: #22c55e;
+  --color-score-mid: #f59e0b;
+  --color-score-low: #ef4444;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 3px;
+  }
+}
